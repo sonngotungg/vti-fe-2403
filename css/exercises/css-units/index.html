@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Units Demo</title>
+    <style>
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
+
+      .container {
+        width: 80%;
+        margin: 20px auto;
+        border: 2px solid black;
+        padding: 20px;
+        font-size: 16px;
+      }
+
+      .box {
+        border: 2px solid red;
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+
+      /* Different units applied to box sizes */
+      .box1 {
+        width: 100px;
+        height: 100px;
+      }
+
+      .box2 {
+        width: 10em;
+        height: 10em;
+      }
+
+      .box3 {
+        width: 10rem;
+        height: 10rem;
+      }
+
+      .box4 {
+        width: 25%;
+        height: 25%;
+      }
+
+      .box5 {
+        width: 50vw;
+        height: 50vw;
+      }
+
+      .box6 {
+        width: 50vh;
+        height: 50vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1">Box 1: 100px x 100px (px)</div>
+      <div class="box box2">Box 2: 10em x 10em (em)</div>
+      <div class="box box3">Box 3: 10rem x 10rem (rem)</div>
+      <div class="box box4">Box 4: 25% x 25% (%)</div>
+      <div class="box box5">Box 5: 50vw x 50vw (vw)</div>
+      <div class="box box6">Box 6: 50vh x 50vh (vh)</div>
+    </div>
+  </body>
+</html>

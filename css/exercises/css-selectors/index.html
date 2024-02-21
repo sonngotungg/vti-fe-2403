@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector Examples</title>
+
+    <style>
+        /* Element Selector */
+        h1 {
+            color: blue;
+        }
+
+        /* Class Selector */
+        .my-class {
+            font-weight: bold;
+        }
+
+        /* ID Selector */
+        #my-id {
+            text-decoration: underline;
+        }
+
+        /* Attribute Selector - ít dùng */
+        input[type="text"] {
+            border: 1px solid #ccc;
+        }
+
+        /* Descendant Selector */
+        div p {
+            margin-left: 20px;
+        }
+
+        /* Child Selector */
+        div > ul {
+            list-style-type: circle;
+        }
+
+        /* Adjacent Sibling Selector */
+        h2 + p {
+            color: green;
+        }
+
+        /* General Sibling Selector */
+        h2 ~ p {
+            font-style: italic;
+        }
+
+        /* Pseudo-class */
+        a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Pseudo-element */
+        p::first-line {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Element Selector</h1>
+    <p class="my-class">Class Selector</p>
+    <div id="my-id">ID Selector</div>
+    <input type="text" placeholder="Attribute Selector">
+
+    <div>
+        <h2>Descendant Selector</h2>
+        <p>This is a paragraph inside a div.</p>
+        <p>This is 2nd paragraph</p>
+    </div>
+
+    <div>
+        <ul>
+            <li>Child Selector</li>
+            <li>List item 1</li>
+            <li>List item 2</li>
+        </ul>
+    </div>
+
+    <h2>Adjacent Sibling Selector</h2>
+    <p>This paragraph follows an h2 element.</p>
+
+    <h2>General Sibling Selector</h2>
+    <p>This is another paragraph following the h2 element.</p>
+
+    <a href="#">Pseudo-class (Hover over me)</a>
+
+    <p>You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.</p>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- 
+    +) Inline CSS is applied directly to the <h1> and <p> elements within the HTML tags.
+    +) Internal CSS is defined within the <style> tags in the <head> section of the HTML document.
+    +) External CSS is linked to the HTML document using the <link> element, which references the styles.css file. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Examples</title>
+    
+    <!-- Internal CSS -->
+    <style>
+        h1 {
+            color: blue;
+            font-size: 24px;
+        }
+        p {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <!-- Inline CSS -->
+    <h1 style="color: red; font-size: 24px;">Hello, World!</h1>
+    <p style="font-family: Arial, sans-serif;">This is a paragraph with inline CSS.</p>
+
+    <!-- Imported CSS -->
+    <h1>Hello, World!</h1>
+    <p>This is a paragraph with external CSS.</p>
+
+    <p class="introduction">This is introduction</p>
+
+</body>
+</html>
