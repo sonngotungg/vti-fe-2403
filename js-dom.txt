@@ -1,0 +1,285 @@
+1. what is DOM and DOM nodes - DOM = document object model - the DOM represents
+an HTML document as a tree of nodes - 3 type of nodes: +) element nodes +) text
+nodes +) comment nodes - node relationship: parent-child-sibling VD:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- comment -->
+    <p>JavaScript DOM</p>
+  </body>
+</html>
+
+=================================================================================================
+=================================================================================================
+=================================================================================================
+2. Selecting elements using DOM - getElementById() VD:
+<p id="intro">Hello World</p>
+<p id="intro">Hi</p>
+
+<script>
+  const introParam = document.getElementById("intro");
+  console.log(introParam);
+  const param = document.getElementById("nothing"); // return null
+</script>
+
+- getElementsByName() VD:
+<input type="radio" name="language" value="JS" />
+<input type="radio" name="language" value="C#" />
+
+<script>
+  const inputList = document.getElementsByName("language");
+  console.log(inputList);
+</script>
+
+- getElementsByTagName() VD:
+<h1>first heading</h1>
+<h1>second heading</h1>
+<h1>third heading</h1>
+<h1>fourth heading</h1>
+
+<script>
+  const headingList = document.getElementsByName("h1");
+  console.log(headingList);
+</script>
+
+- getElementsByClassName() VD1:
+<h1 class="message">first heading</h1>
+<h1 class="message">second heading</h1>
+<h1 class="message">third heading</h1>
+
+<script>
+  const messageList = document.getElementsByClassName("message");
+  console.log(messageList);
+</script>
+
+VD2:
+<h1 class="message">first heading</h1>
+<div id="container">
+  <h1 class="message">second heading</h1>
+  <h1 class="message">third heading</h1>
+</div>
+
+<script>
+  const container = document.getElementById("container");
+  const headingListInContainer = container.getElementsByClassName("message");
+  console.log(headingListInContainer);
+</script>
+
+- querySelector() & querySelectorAll() +) allows to select the first element
+that matches 1 or more CSS selectors VD:
+<h1 class="message">first heading</h1>
+<div id="container">
+  <h1 class="message">second heading</h1>
+  <h1 class="message">third heading</h1>
+</div>
+
+<script>
+  const msg = document.querySelector(".message");
+  const msgList = document.querySelector(".message");
+  console.log(msg);
+  console.log(msgList);
+  const firstHeadingInDiv = document.querySelector("div h1");
+  const firstHeadingInDivOtherWay = document.querySelector(
+    "#container .message"
+  );
+  console.log(firstHeadingInDiv);
+  console.log(firstHeadingInDivOtherWay);
+</script>
+
+=================================================================================================
+=================================================================================================
+=================================================================================================
+3. Traversing elements - selecting parent element: +) to get the parent node of
+a specified node in the DOM tree, we ca use 'parentElement' property VD:
+<div class="parent">
+  <p class="child">This is child node</p>
+</div>
+
+<script>
+  const child = document.querySelector(".parent .child");
+  const parent = child.parentElement;
+</script>
+
+- selecting child element VD:
+<div class="title">
+  <p>Welcome to NTS 1</p>
+  <p>Welcome to NTS 2</p>
+  <p>Welcome to NTS 3</p>
+  <p>Welcome to NTS 4</p>
+</div>
+
+<script>
+  const parentDiv = document.querySelector(".title");
+  const firstChild = parent.firstElementChild;
+  const lastChild = parent.lastElementChild;
+  const children = parent.children;
+  console.log(firstChild);
+  console.log(lastChild);
+  console.log(children);
+</script>
+
+- selecting sibling elements VD:
+<div class="title">
+  <p>Welcome to NTS 1</p>
+  <p>Welcome to NTS 2</p>
+  <p>Welcome to NTS 3</p>
+  <p>Welcome to NTS 4</p>
+</div>
+
+<script>
+  // const parent = document.querySelector(".title");
+  // const firstChild = parent.firstElementChild;
+  // const lastChild = parent.lastElementChild;
+
+  const secondChild = firstChild.nextElementSibling;
+  const thirdChild = lastChild.previousElementSibling;
+  console.log(secondChild);
+  console.log(thirdChild);
+</script>
+
+=================================================================================================
+=================================================================================================
+=================================================================================================
+4. MANIPULATING HTML ELEMENTS - createElement() VD:
+<body>
+  <script>
+    const div = document.createElement("div");
+    // C1
+    /* 
+      const textParam = document.createElement("p");
+      textParam.innerText = "hello world";
+      div.appendChild(textParam);
+      */
+    // C2
+    const textParam = "<p>Hello world</p>";
+    div.innerHTML = textParam;
+    div.id = "intro";
+
+    document.body.appendChild(div);
+    // document.head
+    // document.body
+  </script>
+</body>
+
+- appendChild() +) add a node to the end of the list of child nodes of a
+specified parent node +) can be used to move an existing child node to the new
+position within the document VD:
+<ul id="menu">
+  <li>Home</li>
+  <li>About</li>
+  <li>Blog</li>
+  <li>Project</li>
+</ul>
+<script>
+  const menu = document.getElementById("menu");
+  const list = document.createElement("li");
+  list.innerText = "Contact";
+  menu.appendChild(list);
+</script>
+
+- innerHTML +) used to add HTML code into document - removeChild() VD:
+<ul id="menu">
+  <li>Home</li>
+  <li>About</li>
+  <li>Blog</li>
+  <li>Project</li>
+</ul>
+<script>
+  const menu1 = document.getElementById("menu");
+  const lastList = menu.lastElementChild;
+  menu.removeChild(lastList);
+</script>
+
+=================================================================================================
+=================================================================================================
+=================================================================================================
+5. ATTRIBUTE METHODS
+<input type="text" id="username" placeholder="enter username" />
+- attributes: type, id, placeholder, ... VD:
+<input type="text" id="username" placeholder="enter username" />
+<script>
+  const inputBox = document.getElementById("username");
+  const allAttributes = inputBox.attributes;
+  const id = inputBox.id;
+  // const id = inputBox.getAttribute('id')
+  console.log(allAttributes);
+  console.log(id);
+</script>
+
+- getAttribute(key) --> value - setAttribute(key, value) --> void -
+hasAttribute(key) --> return boolean - removeAttribute(key)
+=================================================================================================
+=================================================================================================
+=================================================================================================
+6. MANIPULATING ELEMENT'S STYLES - style property
+<input
+  type="text"
+  id="username"
+  placeholder="enter username"
+  style="background-color: red; font-size: 10px"
+/>
+<script>
+  const inputBox1 = document.getElementById("username");
+  console.log(inputBox1.style.backgroundColor);
+  console.log(inputBox1.style.fontSize);
+  inputBox1.style.padding = "20px";
+  console.log(inputBox1);
+</script>
+
+- cssText: +) write all the inline styling by 1 text +) cssText is gonna
+overwrite the current inline styling
+<input
+  type="text"
+  id="username"
+  placeholder="enter username"
+  style="background-color: red; font-size: 10px"
+/>
+<script>
+  const inputBox1 = document.getElementById("username");
+  console.log(inputBox1.style.backgroundColor);
+  console.log(inputBox1.style.fontSize);
+  inputBox1.style.cssText = "background-color: blue; width: 200px";
+</script>
+
+- className property +) to get/update the class name of an element VD:
+<h1 id="title" class="main message">This is heading</h1>
+<script>
+  const title = document.getElementById("title");
+  title.className += "new"; // append the current className list
+  title.className = "new"; // overwrite the current className list
+  console.log(title);
+</script>
+
+- classList property (other way to update className list) VD:
+<h1 id="title" class="main message">This is heading</h1>
+<script>
+  const title = document.getElementById("title");
+  // add
+  title.classList.add("new", "new2");
+  console.log(title);
+  // remove
+  title.classList.remove("new", "message");
+  console.log(title);
+  // replace
+  title.classList.replace("new2", "other-new");
+  console.log(title);
+  // contains
+  title.classList.contains("message"); // return true/false
+  // toggle: if exist --> remove; else --> add
+  title.classList.toggle("msg");
+  console.log(title);
+</script>
+
+=================================================================================================
+=================================================================================================
+=================================================================================================
+7. JS EVENT LISTENER - what is event in JS VD: onClick, onDoubleClick, onChange,
+...
+<button type="submit" onClick="">Submit</button>
+
+- Event Bubbling & Event Capturing
