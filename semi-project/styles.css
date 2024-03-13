@@ -1,4 +1,6 @@
-.create-form {
+.create-form,
+.edit-form,
+.detail-modal {
   display: none;
 }
 
@@ -13,6 +15,10 @@
   width: 100%;
 }
 
+.product-detail .product-image {
+  width: fit-content;
+}
+
 .product-index {
   text-align: center;
 }
@@ -20,4 +26,8 @@
 .product-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.detail-modal {
+  border: 1px solid blue;
 }

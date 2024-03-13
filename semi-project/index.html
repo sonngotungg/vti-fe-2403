@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="create-form">
-      <form onsubmit="handleAddProduct(event)">
+      <div>
         <div>
           Name:
           <input
@@ -59,12 +59,77 @@
         </div>
         <div class="produc-form-actions">
           <button onclick="handleCancelAdd()">Cancel</button>
-          <button type="submit">Create</button>
+          <button onclick="handleAddProduct()">Create</button>
         </div>
-      </form>
+      </div>
     </div>
-    <div class="edit-form"></div>
-    <div class="detail-modal"></div>
+    <div class="edit-form">
+      <div>
+        <div>
+          Name:
+          <input
+            id="edit-product-name"
+            type="text"
+            placeholder="enter product name"
+          />
+        </div>
+        <div>
+          Type:
+          <input
+            id="edit-product-type"
+            type="text"
+            placeholder="enter product type"
+          />
+        </div>
+        <div>
+          Price:
+          <input
+            id="edit-product-price"
+            type="number"
+            placeholder="enter price"
+          />
+        </div>
+        <div>
+          Image:
+          <input
+            id="edit-product-image"
+            type="text"
+            placeholder="enter image url"
+          />
+        </div>
+        <div>
+          Is Used:
+          <input
+            id="edit-is-used"
+            type="checkbox"
+            placeholder="enter image url"
+          />
+        </div>
+        <div>
+          Count In Stock:
+          <input
+            id="edit-count-in-stock"
+            type="number"
+            placeholder="enter image url"
+          />
+        </div>
+        <div>
+          Discount (%):
+          <input
+            id="edit-discount"
+            type="number"
+            placeholder="enter image url"
+          />
+        </div>
+        <div class="produc-form-actions">
+          <button onclick="handleCancelEdit(event)">Cancel</button>
+          <button onclick="handleEditProduct()">Edit</button>
+        </div>
+      </div>
+    </div>
+    <div class="detail-modal">
+      <!-- Product Detail -->
+    </div>
     <script src="./main.js" />
   </body>
 </html>
