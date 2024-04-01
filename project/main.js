@@ -1,13 +1,8 @@
 const fetchUserList = async () => {
   const data = await fetch("https://jsonplaceholder.typicode.com/users");
 
-  return data.json();
+  return data.json(); // trả về 1 danh sách user
 };
-
-const contentDiv = document.querySelector(".content");
-contentDiv.innerHTML = `
-    <h1>Loading...</h1>
-`;
 
 const generateUserCard = (userInfo) => {
   return `
@@ -39,11 +34,14 @@ const showDetail = (user) => {
 const generateUserCardList = (userList) => {
   const content = `
         <div style='display: flex; gap: 10px; flex-wrap: wrap'>
-        ${userList.map((item) => generateUserCard(item))}
+          ${userList.map((item) =>
+            generateUserCard(item)
+          )} // trả về 1 array, item của array này là gì
         </div>
     `;
   return content;
 };
+
 // Function to close the modal
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
@@ -54,6 +52,16 @@ function logUserInfo(user) {
   console.log("User Info:", user);
   closeModal();
 }
-fetchUserList().then((data) => {
-  contentDiv.innerHTML = generateUserCardList(data);
-});
+
+const contentDiv = document.querySelector(".content");
+contentDiv.innerHTML = `
+    <h1>Loading...</h1>
+`;
+
+fetchUserList()
+  .then((data) => {
+    contentDiv.innerHTML = generateUserCardList(data);
+  })
+  .catch((err) => (contentDiv.innerHTML = "<h1>Error</h1>"));
+
+// mình đã gọi đc api và nhận đc userList

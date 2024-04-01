@@ -6,8 +6,8 @@
 
 .product-card {
   border: 1px solid red;
-  width: 250px;
-  padding: 15px;
+   # width: 250px;
+  /* padding: 15px; */
 }
 
 .product-image {

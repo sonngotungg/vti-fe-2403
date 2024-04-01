@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.even {
+  color: green;
+}
+
+.odd {
+  color: red;
+}
+
+.count {
+  font-size: 25px;
+  font-weight: 600;
+}

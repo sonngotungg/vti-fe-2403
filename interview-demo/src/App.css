@@ -1,0 +1,21 @@
+.data-list {
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 10px solid blue;
+  width: 400px;
+  align-items: flex-start;
+  overflow-x: auto;
+}
+
+.data-item {
+  border-radius: 30px;
+  border: 1px solid red;
+  padding: 10px;
+  height: 30px;
+}
+
+.footer {
+  padding-top: 100vh;
+}

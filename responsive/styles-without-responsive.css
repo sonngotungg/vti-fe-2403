@@ -1,0 +1,28 @@
+.title {
+  color: black;
+  font-size: 25px;
+}
+/* Media query for viewport width <= 600px */
+
+.container {
+  display: flex; 
+  /* flex-direction: row; */
+}
+
+@media only screen and (max-width: 600px) {
+  /* css */
+  .title {
+    color: red; /* Change background color for smaller screens */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width | min-width: ....) {
+
+  /* styling cho dieu kien */
+  /* CSS */
+}

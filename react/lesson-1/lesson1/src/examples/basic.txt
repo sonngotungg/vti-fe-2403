@@ -1,0 +1,37 @@
+import "./App.css"; // ES6: import ----> đây là nơi mình import Style cho component
+import ComponentA from "./components/ComponentA";
+
+function App() {
+  // đây là nơi xử lí logic dùng JS
+
+  return (
+    // JSX
+    // Viet nhu code HTML
+
+    // Nơi hiển thị HTML
+    <div className="App">
+      <h1>Hello Wold</h1>
+      <p>VTI FE 2403</p>
+      <ComponentA />
+    </div>
+  );
+}
+
+export default App; // ES6: Export
+
+
+
+* ComponentA
+
+import "./ComponentA.css";
+
+function ComponentA() {
+  // xu li logic
+
+  return (
+    // noi hien thi HTML
+    <div className="ComponentA">ComponentA</div>
+  );
+}
+
+export default ComponentA;

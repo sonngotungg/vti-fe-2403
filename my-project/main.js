@@ -1,4 +1,4 @@
-const BASE_API = "https://65e864014bb72f0a9c4f2af6.mockapi.io/api"; // using your API endpoint
+const BASE_API = "https://65ef11e8ead08fa78a4fb405.mockapi.io/api"; // using your API endpoint
 
 // fetch(url, option)
 
@@ -33,7 +33,18 @@ const createProduct = async (data) => {
   return res.ok;
 };
 
-const updateProduct = async (data) => {};
+const updateProduct = async (data) => {
+  const res = fetch(`${BASE_API}/products/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  return res.ok;
+};
+
 const deleteProduct = async (id) => {
   const res = fetch(`${BASE_API}/products/${id}`, {
     method: "DELETE",
@@ -93,7 +104,32 @@ const handleAdd = async (event) => {
   const isOK = await createProduct(data);
   console.log({ isOK });
   // hiển thị lại list
+  location.reload();
+  // ẩn form
+  // truy cập element có .product-form --> style.display = 'none'
+};
 
+const handleEdit = async (event) => {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  const productName = document.getElementById("edit-product-name").value;
+  const productType = document.getElementById("edit-product-type").value;
+  const price = document.getElementById("edit-product-price").value;
+  const productImage = document.getElementById("edit-product-image").value;
+
+  const data = {
+    productName,
+    productType,
+    price,
+    productImage,
+  };
+
+  console.log({ data });
+  // gọi API create
+  const isOK = await updateProduct(data);
+  console.log({ isOK });
+  // hiển thị lại list
+  location.reload();
   // ẩn form
   // truy cập element có .product-form --> style.display = 'none'
 };
@@ -102,6 +138,23 @@ const handleDelete = async (productId) => {
   // gọi API delete
   const isDeleteOk = await deleteProduct(productId);
   console.log({ isDeleteOk });
+};
+
+const openEditModal = async (productId) => {
+  const editModal = document.querySelector(".product-edit-detail");
+  editModal.style.display = "block";
+
+  const productDetail = await getProductDetail(productId);
+
+  document.getElementById("edit-product-name").value =
+    productDetail.productName;
+  document.getElementById("edit-product-type").value =
+    productDetail.productType;
+  document.getElementById("edit-product-price").value = productDetail.price;
+  document.getElementById("edit-product-image").value =
+    productDetail.productImage;
+
+  localStorage.setItem("selected-product-id", productId);
 };
 
 const generateProductCard = (product, index) => {
@@ -119,7 +172,9 @@ const generateProductCard = (product, index) => {
             <button onclick='handleDelete(${JSON.stringify(
               product.id
             )})'>Delete</button>
-            <button>Edit</button>
+            <button onClick='openEditModal(${JSON.stringify(
+              product.id
+            )})'>Edit</button>
         </div>
     `;
 };

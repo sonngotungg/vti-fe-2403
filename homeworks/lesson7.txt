@@ -1,0 +1,32 @@
+JS DOM:
+Làm các static web sau dùng thuần JS (k dùng HTML, CSS)
+(gợi ý: tạo trc dùng HTML+CSS)
+
+1. ./layout-1.webbp
+2. ./layout-2.webbp (optional)
+3. làm lại bài cv.html chỉ dùng JS, k có html và css (optional)
+4. https://startbootstrap.com/previews/shop-homepage
+
+
+====================================================================
+ES6
+
+1. viết 1 hàm:
+- input: array
+- output: array mới giống input array nhưng giá trị phải khác 0, null, undefined
+VD:
+input: [1,0,'hello', undefined, null, {id: 1}]
+output: [1, 'hello', {id: 1}]
+
+input: []
+output: []
+
+input: k phải array
+output: log ra error
+
+
+====================================================================
+Asynchronous
+
+
+

@@ -41,6 +41,47 @@
       </form>
     </div>
     <div class="product-list-container"></div>
+    <div class="product-edit-detail">
+      <form onsubmit="handleEdit(event)">
+        <div>
+          Name:
+          <input
+            id="edit-product-name"
+            type="text"
+            placeholder="enter product name"
+          />
+        </div>
+        <div>
+          Type:
+          <input
+            id="edit-product-type"
+            type="text"
+            placeholder="enter product type"
+          />
+        </div>
+        <div>
+          Price:
+          <input
+            id="edit-product-price"
+            type="number"
+            placeholder="enter price"
+          />
+        </div>
+        <div>
+          Image:
+          <input
+            id="edit-product-image"
+            type="text"
+            placeholder="enter image url"
+          />
+        </div>
+        <div class="produc-form-actions">
+          <button onclick="handleCancelAdd">Cancel</button>
+          <button type="submit">Save Edit</button>
+        </div>
+      </form>
+    </div>
+
     <script src="./main.js"></script>
   </body>
 </html>

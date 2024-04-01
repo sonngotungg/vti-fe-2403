@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./sample.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="first-box" class="sub-container">
+        <div class="box-item">1</div>
+        <div class="box-item">223424234</div>
+      </div>
+      <div id="second-box" class="sub-container">
+        <div class="box-item">3</div>
+        <div class="box-item">4</div>
+      </div>
+    </div>
+    <script>
+      // c1 - getElementById
+      // const firstBox = document.getElementById("first-box");
+      // console.log([firstBox]);
+      // const item1 = firstBox.firstElementChild;
+      // const item1 = firstBox.children[0];
+      // console.log([item1]);
+      // item1.style.backgroundColor = "yellow";
+      // c2 - getElementsByClassName
+      // const subContainerList = document.getElementsByClassName('sub-container')
+      // const firstBox = subContainerList[0]
+      // ...
+      // c3 - querySelector
+      const firstBox = document.querySelector("#first-box");
+      console.log([firstBox]);
+      const secondItem = firstBox.lastElementChild;
+      const firstItem = secondItem.previousElementSibling;
+      firstItem.style.backgroundColor = "yellow";
+
+      const introHeading = document.createElement("h1");
+      introHeading.innerText = "Hello world";
+      // secondItem.appendChild(introHeading);
+
+      // innerHTML
+      const introHeading2 = "<p>2</p><h1>Hello World</h1>";
+      console.log(secondItem.innerHTML);
+      secondItem.innerHTML = introHeading2;
+    </script>
+  </body>
+</html>

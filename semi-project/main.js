@@ -247,3 +247,13 @@ const handleEditProduct = async () => {
 };
 
 displayProductList();
+
+// ES6: ...
+
+// structuredClone
+
+let x = { id: { name: "son" } };
+y = structuredClone(x);
+
+x.id.name = 3;
+console.log(y); //  {id: {name: 3}}

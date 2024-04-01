@@ -1,0 +1,32 @@
+Lesson1: 
+- work ethics
+- how internet works
+- how web works
+- how to create a web application
+- setup git repo for class
+- homework:
++) read lesson2 materials 
+
+Lesson2:
+- HTML
++) html tags: 1 example
++) semantic tags: 1 example
++) block & inline: (div, p) and (span, img) - 3 examples
+- CSS
++) css selector (basic - tag, id, class): 3 example
++) box-modal: 3 examples
++) position: fixed - 3 examples, static - 1 example, relative: 3 examples, absolute - 3 examples
++) flexbox: each prop - each value = 1 example
++) css selectors (advanced - )
+- homework:
++) 1 html file with all of HTML tags that be introduced
++) layout template
+
+Lesson3:
+==========================================================================
+
+1. ktra:
+- đầu ra là gì? 30 câu - 45p
+- nội dung: js array methods, css, html
+
+2. callback - promise - await - 1h
